@@ -12,10 +12,25 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuratiown>
+                    <source>8</source>
+                    <target>8</target>
+                    <encoding>UTF-8</encoding>
+                </configuratiown>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.7</version>
                 <configuration>
-                    <source>7</source>
-                    <target>7</target>
+                    <useSystemClassLoader>false</useSystemClassLoader>
+                    <!--用于配置maven test时跑testng.xml-->
+                    <suiteXmlFiles>
+                        <suiteXmlFile>./src/main/resources/testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
                 </configuration>
+
             </plugin>
         </plugins>
     </build>

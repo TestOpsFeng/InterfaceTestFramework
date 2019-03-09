@@ -21,7 +21,7 @@ public class BaiduTest{
         body.put("username","qwertyu");
         CloseableHttpResponse response = NetUtils.post("https://passport.yhd.com/passport/agree.do", header, body);
         Assert.assertEquals(NetUtils.getResponseStatusCode(response),200);
-        Assert.assertEquals(NetUtils.getResponseString(response),"{\"show\":false}");
+        Assert.assertEquals(NetUtils.getResponseString(response),"{\"show\":true}");
     }
 
 }
